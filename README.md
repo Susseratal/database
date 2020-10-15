@@ -9,4 +9,6 @@ B: It's designed to run on a Windows XP machine with processing power that would
 C: It's desinged to run on a Windows XP machine with no internet connection.
 
 Changelog:
-
+15/10/20:
+        Downloaded DB browser for SQLite. Seems like it'll be useful
+        Created demo file. Still doesn't work, but I'm getting there with the docs
