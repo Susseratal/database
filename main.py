@@ -12,8 +12,8 @@ try:
     print ("SQLite Database Version is: ", record) #prints SQLite database version
     cursor.close #close the cursor opject
 
-except sqlite3.error as error: #catch database error - Ironically error: sqlite3 has no attriubute "error"
-    print ("error while connecting to SQLite ", error) #print error
+except sqlite3.Error as error: #catch database error
+    print ("error while connecting to SQLite", error) #print error
 
 finally:
     if (conn):
