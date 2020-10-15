@@ -17,3 +17,6 @@ Changelog:
         Created demo file. Still doesn't work, but I'm getting there with the docs
         Demo file now works
         Added file type cheat sheet with python versions
+        Added requriements file which isn't what it looks like. It's what the program is required to do. Should change
+        I've got the structure and workflow clearer in my head (and on a napkin in the coffee shop I'm sat in)
+        Added calendar.py to learn the calendar system
