@@ -1,11 +1,9 @@
-This program needs to:
+DB Browser for SQLITE
 
-Create a database with a custom name (custom name optional but I want it)
+bash
 
-Have a set of fields that can be added to, edited or deleted from
+Github
 
-Have an actual requirements file for other users
+I'm not very good at this
 
-Have a friendly, lightweight, text based UI
-
-With a simple command, open a database viewer for normals to interpret the data
+Please help
