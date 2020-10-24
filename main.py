@@ -1,6 +1,7 @@
 import sqlite3
 import datetime
 import calendar
+from sqlite3 import Error
 
 ############################################################
 #               CHEAT SHEET OF DATA TYPES                  #
@@ -42,7 +43,7 @@ try:
     conn.commit() 
     print ("sqlite table created")
 
-    sql_cmd = "SELECT * FROM Project_info WHERE ProjectNumber='{}'".format(Number)
+    sql_cmd = "SELECT * FROM Project_info WHERE ='{}'".format(Number)
     sqlite_insert_query = '''INSERT INTO table_list * FROM
     (date,rider,email,instructor,lessontype,horsename,bookings,arena)
     VALUES
@@ -59,5 +60,3 @@ finally:
     if (conn):
         conn.close() #close SQLite database
         print ("The SQLite connection is closed")
-
-

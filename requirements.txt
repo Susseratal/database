@@ -1,9 +1,0 @@
-DB Browser for SQLITE
-
-bash
-
-Github
-
-I'm not very good at this
-
-Please help
