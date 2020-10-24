@@ -13,8 +13,6 @@ C: It's desinged to run on a Windows XP machine with no internet connection.
 
 Changelog:
 
-        15/10/20:
-        
         Downloaded DB browser for SQLite. Seems like it'll be useful
         
         Created demo file. Still doesn't work, but I'm getting there with the docs
@@ -32,3 +30,7 @@ Changelog:
         deleted calendar.py and just started doing it in main.py
         
         I think I've broken it
+
+        I made what should actually have been the requirements file and it's completely empty. Apparently this program doesn't require anything.
+
+        why must I break everything I touch?
