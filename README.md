@@ -9,7 +9,7 @@ A: I am one of the three people left in the world who says that storing everythi
 
 B: It's designed to run on a Windows XP machine with processing power that would make someone from the Napoleonic war laugh
 
-C: It's desinged to run on a Windows XP machine with no internet connection.
+C: It's designed to run on a Windows XP machine with no internet connection.
 
 Changelog:
 
@@ -34,3 +34,7 @@ Changelog:
         I made what should actually have been the requirements file and it's completely empty. Apparently this program doesn't require anything.
 
         why must I break everything I touch?
+
+
+To Do:
+        - [ ] Create a functioning loop so that it can append to the table on any given run
