@@ -37,7 +37,11 @@ Changelog:
 
         Added License
         
-        - [ ] Create user input functionality
+        Created user input functionality
+
+        Allow users to edit data in case they need to change something
+        
+        Change the case of certain inputs so it repairs capitalisation for them
 
 To Do:
 

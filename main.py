@@ -19,19 +19,61 @@ conn = sqlite3.connect("bookings.db") #create a connection and specify the datab
 cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
 print ("Successfully connected to database")
 
-date = int(input ("please enter a date: "))
-rider = str(input ("Please enter the rider name: "))
-email = str(input ("Please enter the email address of the rider or rider's guardian: "))
-instructor = str(input ("Please enter the instructor's name: "))
-lessontype = str(input ("Please enter what type of lesson it is: "))
-horse = str(input ("Please enter the horse's name: "))
-bookings = int(input ("How many bookings are there: "))
-arena = str(input ("What arena is it in: "))
+while True:
+    date = input ("please enter a date: ")
+
+    rider_firstname = input ("Please enter the rider's first name: ")
+    rider_firstname = rider_firstname.title()
+
+    rider_surname = input ("Please enter the rider's surname: ")
+    rider_surname = rider_surname.title()
+
+    email = input ("Please enter the email address of the rider or rider's guardian: ")
+    
+    instructor = input ("Please enter the instructor's name: ")
+    instructor = instructor.title()
+    
+    lessontype = input ("Please enter what type of lesson it is: ")
+    
+    horse = input ("Please enter the horse's name: ")
+    horse = horse.title()
+    
+    bookings = int(input ("How many bookings are there: "))
+    
+    arena = input ("What arena is it in: ")
+    arena = arena.title()
+    
+    print (" ")
+    print ("The data you inputted was: ")
+    print ("Date: " + date)
+    print (" ")
+    print ("The rider's first name: " + rider_firstname)
+    print (" ")
+    print ("The rider's surname: " + rider_surname)
+    print (" ")
+    print ("The email of the rider or rider's guardian: " + email)
+    print (" ")
+    print ("The lesson instructor: " + instructor)
+    print (" ")
+    print ("The lesson type" + lessontype)
+    print (" ")
+    print ("The horse's name: " + horse)
+    print (" ")
+    print ("The numeber of bookings: " + str(bookings))
+    print (" ")
+    print ("The lesson arena: " + arena)
+    print (" ")
+    check = input ("Is this correct? y/n ")
+    if check == ("y"):
+        break
+    elif check == ("yes"):
+        break
 
 try:
     sqlite_create_table_query = '''CREATE TABLE if not exists booking(
     date REAL NOT NULL,
-    rider TEXT NOT NULL,
+    rider_firstname TEXT NOT NULL,
+    rider_surname TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
     instructor TEXT NOT NULL,
     lessontype TEXT NOT NULL,
@@ -44,10 +86,10 @@ try:
     print ("sqlite table created")
 
     sqlite_insert_query = '''INSERT INTO booking
-    (date,rider,email,instructor,lessontype,horsename,bookings,arena)
+    (date,rider_firstname,rider_surname,email,instructor,lessontype,horsename,bookings,arena)
     VALUES
-    (?, ?, ?, ?, ?, ?, ?, ?)'''
-    table_row = (date, rider, email, instructor, lessontype, horse, bookings, arena)
+    (?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+    table_row = (date, rider_firstname, rider_surname, email, instructor, lessontype, horse, bookings, arena)
     count = cursor.execute(sqlite_insert_query, table_row)
     conn.commit()
     print ("Information recorded", cursor.rowcount)
