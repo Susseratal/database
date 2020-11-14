@@ -45,10 +45,10 @@ Changelog:
         
         Make the date feature have some fancy datetime formatting
 
+        Reformat to have a function (using code from Alex's fork)
+
 To Do:
 
         - [ ] Fix the date feature so that it has the correct formatting because it's still broken as hell
         
         - [ ] Datetime input sanitisation and better error handling
-
-        - [ ] Reformat to have a function (using code from Alex's fork)
