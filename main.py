@@ -21,48 +21,30 @@ print ("Successfully connected to database")
 
 while True:
     date = input ("please enter a date: ")
-
     rider_firstname = input ("Please enter the rider's first name: ")
     rider_firstname = rider_firstname.title()
-
     rider_surname = input ("Please enter the rider's surname: ")
     rider_surname = rider_surname.title()
-
     email = input ("Please enter the email address of the rider or rider's guardian: ")
-    
     instructor = input ("Please enter the instructor's name: ")
     instructor = instructor.title()
-    
     lessontype = input ("Please enter what type of lesson it is: ")
-    
+    lessontype = lessontype.title()
     horse = input ("Please enter the horse's name: ")
     horse = horse.title()
-    
     bookings = int(input ("How many bookings are there: "))
-    
     arena = input ("What arena is it in: ")
     arena = arena.title()
-    
-    print (" ")
-    print ("The data you inputted was: ")
-    print ("Date: " + date)
-    print (" ")
-    print ("The rider's first name: " + rider_firstname)
-    print (" ")
-    print ("The rider's surname: " + rider_surname)
-    print (" ")
-    print ("The email of the rider or rider's guardian: " + email)
-    print (" ")
-    print ("The lesson instructor: " + instructor)
-    print (" ")
-    print ("The lesson type" + lessontype)
-    print (" ")
-    print ("The horse's name: " + horse)
-    print (" ")
-    print ("The numeber of bookings: " + str(bookings))
-    print (" ")
-    print ("The lesson arena: " + arena)
-    print (" ")
+    print ("\nThe data you inputted was: ")
+    print ("Date: " + date + "\n")
+    print ("The rider's first name: " + rider_firstname + "\n")
+    print ("The rider's surname: " + rider_surname + "\n")
+    print ("The email of the rider or rider's guardian: " + email + "\n")
+    print ("The lesson instructor: " + instructor + "\n")
+    print ("The lesson type" + lessontype + "\n")
+    print ("The horse's name: " + horse + "\n")
+    print ("The numeber of bookings: " + str(bookings) + "\n")
+    print ("The lesson arena: " + arena + "\n")
     check = input ("Is this correct? y/n ")
     if check == ("y"):
         break
