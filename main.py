@@ -1,6 +1,5 @@
-import sqlite3
 import datetime
-import calendar
+import sqlite3
 from sqlite3 import Error
 
 ############################################################
@@ -20,7 +19,8 @@ cursor = conn.cursor() #create a cursor object using the connection object retur
 print ("Successfully connected to database")
 
 while True:
-    date = input ("please enter a date: ")
+    date = input ("please enter a date: (format dd/mm/yyyy) ")
+    date = datetime.datetime.strptime(date, "%d/%m/%Y") #This works but the error handling is attrocious. Also it doesn't completely work
     rider_firstname = input ("Please enter the rider's first name: ")
     rider_firstname = rider_firstname.title()
     rider_surname = input ("Please enter the rider's surname: ")
@@ -36,15 +36,15 @@ while True:
     arena = input ("What arena is it in: ")
     arena = arena.title()
     print ("\nThe data you inputted was: ")
-    print ("Date: " + date + "\n")
-    print ("The rider's first name: " + rider_firstname + "\n")
-    print ("The rider's surname: " + rider_surname + "\n")
-    print ("The email of the rider or rider's guardian: " + email + "\n")
-    print ("The lesson instructor: " + instructor + "\n")
-    print ("The lesson type" + lessontype + "\n")
-    print ("The horse's name: " + horse + "\n")
-    print ("The numeber of bookings: " + str(bookings) + "\n")
-    print ("The lesson arena: " + arena + "\n")
+    print ("\nDate: " + str(date))
+    print ("\nThe rider's first name: " + rider_firstname)
+    print ("\nThe rider's surname: " + rider_surname)
+    print ("\nThe email of the rider or rider's guardian: " + email)
+    print ("\nThe lesson instructor: " + instructor)
+    print ("\nThe lesson type" + lessontype)
+    print ("\nThe horse's name: " + horse)
+    print ("\nThe numeber of bookings: " + str(bookings))
+    print ("\nThe lesson arena: " + arena)
     check = input ("Is this correct? y/n ")
     if check == ("y"):
         break
