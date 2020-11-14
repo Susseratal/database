@@ -29,7 +29,7 @@ bookings = int(input ("How many bookings are there: "))
 arena = str(input ("What arena is it in: "))
 
 try:
-    sqlite_create_table_query = '''CREATE TABLE if not exists table_list(
+    sqlite_create_table_query = '''CREATE TABLE if not exists booking(
     date REAL NOT NULL,
     rider TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
@@ -43,12 +43,12 @@ try:
     conn.commit() 
     print ("sqlite table created")
 
-    sql_cmd = "SELECT * FROM Project_info WHERE ='{}'".format(Number)
-    sqlite_insert_query = '''INSERT INTO table_list * FROM
+    sqlite_insert_query = '''INSERT INTO booking
     (date,rider,email,instructor,lessontype,horsename,bookings,arena)
     VALUES
-    ((date), (rider), (email), (instructor), (lessontype), (horse), (bookings), (arena))'''
-    count = cursor.execute(sqlite_insert_query)
+    (?, ?, ?, ?, ?, ?, ?, ?)'''
+    table_row = (date, rider, email, instructor, lessontype, horse, bookings, arena)
+    count = cursor.execute(sqlite_insert_query, table_row)
     conn.commit()
     print ("Information recorded", cursor.rowcount)
     cursor.close() #closes the cursor 

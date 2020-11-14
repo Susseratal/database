@@ -36,11 +36,9 @@ Changelog:
         why must I break everything I touch?
 
         Added License
-
-To Do:
-
-        - [ ] Create a functioning loop so that it can append to the table on any given run
         
         - [ ] Create user input functionality
 
-        - [ ] Make the database correctly append the table instead of just changing the existing data
+To Do:
+
+        - [ ] Fix the date feature so that it has the correct formatting?
