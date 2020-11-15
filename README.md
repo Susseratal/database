@@ -51,8 +51,16 @@ Changelog:
         
         Datetime input sanitisation and better error handling
 
+        Added rider weight and rider age inputs
+
 To Do:
         
         - [ ] Add ability to edit and delete rows of data
 
         - [ ] Work out how I'm going to do the front end
+
+        - [ ] Add horse weight and age inputs
+
+        - [ ] Calculate if a rider and horse are compatable (possibly a front end feature)
+
+        - [ ] Add hours worked so that horses can't be overworked
