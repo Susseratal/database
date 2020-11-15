@@ -1,6 +1,7 @@
 import datetime
 import sqlite3
 from sqlite3 import Error
+from datetime import date
 
 ############################################################
 #               CHEAT SHEET OF DATA TYPES                  #
@@ -13,7 +14,7 @@ from sqlite3 import Error
 #           used to store images and files (BYTES)         #
 ############################################################
 
-def write_data (date: str, rider_firstname: str, rider_surname: str, email, instructor: str, lessontype: str, horse: str, bookings: int, arena: str) -> bool:
+def write_data (currentdate: str, rider_firstname: str, rider_surname: str, email, instructor: str, lessontype: str, horse: str, bookings: int, arena: str) -> bool:
     conn = sqlite3.connect("bookings.db") #create a connection and specify the database it should connect to
     #if that database doesn't exist, it creates it.
     cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
@@ -21,7 +22,7 @@ def write_data (date: str, rider_firstname: str, rider_surname: str, email, inst
 
     try:
         sqlite_create_table_query = '''CREATE TABLE if not exists booking(
-        date REAL NOT NULL,
+        currentdate TEXT NOT NULL,
         rider_firstname TEXT NOT NULL,
         rider_surname TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
@@ -36,10 +37,10 @@ def write_data (date: str, rider_firstname: str, rider_surname: str, email, inst
         print ("sqlite table created")
 
         sqlite_insert_query = '''INSERT INTO booking
-        (date,rider_firstname,rider_surname,email,instructor,lessontype,horsename,bookings,arena)
+        (currentdate,rider_firstname,rider_surname,email,instructor,lessontype,horsename,bookings,arena)
         VALUES
         (?, ?, ?, ?, ?, ?, ?, ?, ?)'''
-        table_row = (date, rider_firstname, rider_surname, email, instructor, lessontype, horse, bookings, arena)
+        table_row = (currentdate, rider_firstname, rider_surname, email, instructor, lessontype, horse, bookings, arena)
         count = cursor.execute(sqlite_insert_query, table_row)
         conn.commit()
         print ("Information recorded", cursor.rowcount)
@@ -55,8 +56,9 @@ def write_data (date: str, rider_firstname: str, rider_surname: str, email, inst
 
 if __name__ == "__main__":
     while True:
-        date = input ("please enter a date: (format dd/mm/yyyy) ")
-        date = datetime.datetime.strptime(date, "%d/%m/%Y") #This works but the error handling is attrocious. Also it doesn't completely work
+        currentdate = input ("please enter a date: (format dd/mm/yyyy) ")
+        currentdate = datetime.datetime.strptime(currentdate, "%d/%m/%Y").date() #This works but the error handling is attrocious. Also it doesn't completely work
+        currentdate = currentdate.isoformat()
         rider_firstname = input ("Please enter the rider's first name: ").title()
         rider_surname = input ("Please enter the rider's surname: ").title()
         email = input ("Please enter the email address of the rider or rider's guardian: ")
@@ -66,7 +68,7 @@ if __name__ == "__main__":
         bookings = int(input ("How many bookings are there: "))
         arena = input ("What arena is it in: ").title()
         print ("\nThe data you inputted was: ")
-        print ("\nDate: " + str(date))
+        print ("\nDate: " + str(currentdate))
         print ("\nThe rider's first name: " + rider_firstname)
         print ("\nThe rider's surname: " + rider_surname)
         print ("\nThe email of the rider or rider's guardian: " + email)
@@ -78,4 +80,4 @@ if __name__ == "__main__":
         check = input ("Is this correct? y/n ").lower()
         if check in ["yes", "y"]:
             break
-    write_data(date, rider_firstname, rider_surname, email, instructor, lessontype, horse, bookings, arena)
+    write_data(currentdate, rider_firstname, rider_surname, email, instructor, lessontype, horse, bookings, arena)

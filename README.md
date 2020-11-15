@@ -47,8 +47,12 @@ Changelog:
 
         Reformat to have a function (using code from Alex's fork)
 
-To Do:
-
-        - [ ] Fix the date feature so that it has the correct formatting because it's still broken as hell
+        Fix the date feature so that it has the correct formatting because it's still broken as hell
         
-        - [ ] Datetime input sanitisation and better error handling
+        Datetime input sanitisation and better error handling
+
+To Do:
+        
+        - [ ] Add ability to edit and delete rows of data
+
+        - [ ] Work out how I'm going to do the front end
