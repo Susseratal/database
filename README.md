@@ -13,45 +13,45 @@ C: It's designed to run on a Windows XP machine with no internet connection.
 
 Changelog:
 
-        Downloaded DB browser for SQLite. Seems like it'll be useful
+        - [x] Downloaded DB browser for SQLite. Seems like it'll be useful
         
-        Created demo file. Still doesn't work, but I'm getting there with the docs
+        - [x] Created demo file. Still doesn't work, but I'm getting there with the docs
         
-        Demo file now works
+        - [x] Demo file now works
         
-        Added file type cheat sheet with python versions
+        - [x] Added file type cheat sheet with python versions
         
-        Added requriements file which isn't what it looks like. It's what the program is required to do. Should change
+        - [x] Added requriements file which isn't what it looks like. It's what the program is required to do. Should change
         
-        I've got the structure and workflow clearer in my head (and on a napkin in the coffee shop I'm sat in)
+        - [x] I've got the structure and workflow clearer in my head (and on a napkin in the coffee shop I'm sat in)
         
-        Added calendar.py to learn the calendar system
+        - [x] Added calendar.py to learn the calendar system
         
-        deleted calendar.py and just started doing it in main.py
+        - [x] deleted calendar.py and just started doing it in main.py
         
-        I think I've broken it
+        - [x] I think I've broken it
 
-        I made what should actually have been the requirements file and it's completely empty. Apparently this program doesn't require anything.
+        - [x] I made what should actually have been the requirements file and it's completely empty. Apparently this program doesn't require anything.
 
-        why must I break everything I touch?
+        - [x] why must I break everything I touch?
 
-        Added License
+        - [x] Added License
         
-        Created user input functionality
+        - [x] Created user input functionality
 
-        Allow users to edit data in case they need to change something
+        - [x] Allow users to edit data in case they need to change something
         
-        Change the case of certain inputs so it repairs capitalisation for them
+        - [x] Change the case of certain inputs so it repairs capitalisation for them
         
-        Make the date feature have some fancy datetime formatting
+        - [x] Make the date feature have some fancy datetime formatting
 
-        Reformat to have a function (using code from Alex's fork)
+        - [x] Reformat to have a function (using code from Alex's fork)
 
-        Fix the date feature so that it has the correct formatting because it's still broken as hell
+        - [x] Fix the date feature so that it has the correct formatting because it's still broken as hell
         
-        Datetime input sanitisation and better error handling
+        - [x] Datetime input sanitisation and better error handling
 
-        Added rider weight and rider age inputs
+        - [x] Added rider weight and rider age inputs
 
 To Do:
         
