@@ -53,14 +53,20 @@ Changelog:
 
         - [x] Added rider weight and rider age inputs
 
+        - [x] Add horse weight and age inputs
+
+        - [x] Add hours worked so that horses can't be overworked
+
 To Do:
+
+        - [ ] Email failed now?
         
         - [ ] Add ability to edit and delete rows of data
 
+        - [ ] Generate horses table
+
+        - [ ] generate "Horses" table with primary key, foreign key and auto increment
+
         - [ ] Work out how I'm going to do the front end
 
-        - [ ] Add horse weight and age inputs
-
         - [ ] Calculate if a rider and horse are compatable (possibly a front end feature)
-
-        - [ ] Add hours worked so that horses can't be overworked
