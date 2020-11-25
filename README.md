@@ -59,14 +59,16 @@ Changelog:
 
 To Do:
 
-        - [ ] Email failed now?
-        
+        - [ ] WHY DOES IT SAY THERE IS NO SQLITE MODULE I AM BAFFLED?!?
+
         - [ ] Add ability to edit and delete rows of data
 
+        - [ ] Email (input field) failed now?
+
+        - [ ] Calculate if a rider and horse are compatable
+        
         - [ ] Generate horses table
 
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
 
         - [ ] Work out how I'm going to do the front end
-
-        - [ ] Calculate if a rider and horse are compatable (possibly a front end feature)
