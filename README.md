@@ -56,10 +56,10 @@ Changelog:
         - [x] Add horse weight and age inputs
 
         - [x] Add hours worked so that horses can't be overworked
+        
+        - [x] WHY DOES IT SAY THERE IS NO SQLITE MODULE I AM BAFFLED?!? (the module is called sqlite3 not sqlite)
 
 To Do:
-
-        - [ ] WHY DOES IT SAY THERE IS NO SQLITE MODULE I AM BAFFLED?!?
 
         - [ ] Add ability to edit and delete rows of data
 
@@ -72,3 +72,5 @@ To Do:
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
 
         - [ ] Work out how I'm going to do the front end
+        
+        - [ ] Generate a curses interface?
