@@ -59,18 +59,22 @@ Changelog:
         
         - [x] WHY DOES IT SAY THERE IS NO SQLITE MODULE I AM BAFFLED?!? (the module is called sqlite3 not sqlite)
 
+        - [x] Email (input field) failed now? Perhaps it's fine? Watch this.
+        
+        - [x] Generate horses table
+
+        - [x] Fixed everything that was very broken so it works again :)
+
 To Do:
+
+        - [ ] Create function to generate a database with a custom name
+
+        - [ ] Add custom input fields etc...
 
         - [ ] Add ability to edit and delete rows of data
 
-        - [ ] Email (input field) failed now?
-
-        - [ ] Calculate if a rider and horse are compatable
-        
-        - [ ] Generate horses table
-
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
 
-        - [ ] Work out how I'm going to do the front end
-        
-        - [ ] Generate a curses interface?
+        - [ ] Calculate if a rider and horse are compatable
+
+        - [ ] Use curses for the interface perhaps?
