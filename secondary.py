@@ -5,11 +5,9 @@ from datetime import date
 from sqlite3 import Error
 
 def write_data_rider (currentdate: str, rider_firstname: str, rider_surname: str, email: str, riderweight: int, riderage: int, instructor: str, lessontype: str, arena: str) -> bool:
-    conn = sqlite3.connect("bookings.db") #create a connection and specify the database it should connect to
-    #if that database doesn't exist, it creates it.
+    conn = sqlite3.connect(dbname + ".db") #create a connection and specify the database it should connect to
     cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
     print ("Successfully connected to database")
-
     try:
         sqlite_create_table_query = '''CREATE TABLE if not exists booking(
         currentdate TEXT NOT NULL,
@@ -45,8 +43,8 @@ def write_data_rider (currentdate: str, rider_firstname: str, rider_surname: str
             print ("The SQLite connection is closed")
 
 def write_data_horse (horse_id: int, horse_name: str, horse_weight: int, hours_worked: int) -> bool:
-    conn = sqlite3.connect("bookings.db")
-    cursor = conn.cursor()
+    conn = sqlite3.connect(dbname + ".db") #create a connection and specify the database it should connect to
+    cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
     print ("Sucessfully connected to database")
 
     try:

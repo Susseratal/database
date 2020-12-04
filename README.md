@@ -67,6 +67,8 @@ Changelog:
 
 To Do:
 
+        - [ ] Trying to create custom databases (conn not defined in secondary)
+
         - [ ] Create function to generate a database with a custom name
 
         - [ ] Add custom input fields etc...
