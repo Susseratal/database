@@ -14,11 +14,8 @@ C: It's designed to run on a Windows XP machine with no internet connection.
 Changelog:
 
         - [x] Downloaded DB browser for SQLite. Seems like it'll be useful
-        
         - [x] Created demo file. Still doesn't work, but I'm getting there with the docs
-        
         - [x] Demo file now works
-        
         - [x] Added file type cheat sheet with python versions
         
         - [x] Added requriements file which isn't what it looks like. It's what the program is required to do. Should change
@@ -81,12 +78,15 @@ Changelog:
 
         - [x] Added a couple of UX improvements to make workflow more pleasant
 
+        - [x] Organise file structure so databases are in "databases" folder
+
 To Do:
-        - [ ] Error handling for deleting databases
 
-        - [ ] Need to be able to add rows of data without crash (conn is not defined)
+        - [ ] sys.argv so it doesn't matter where script runs from the path doesn't break        
 
-        - [ ] Organise file structure so databases are in "databases" folder
+        - [ ] Error handling for deleting databases (last time it just printed the error message a few times in the "no databases" bug)
+
+        - [ ] Need to be able to add rows of data without crash (conn is not defined) ## I am avoiding this problem ##
 
         - [ ] Add custom input fields (and custom number of fields) in tables
 
@@ -95,5 +95,7 @@ To Do:
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
 
         - [ ] Calculate if a rider and horse are compatable
+
+        - [ ] datatime formatting still has really poor error handling
 
         - [ ] Use curses for the interface perhaps?
