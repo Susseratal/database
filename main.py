@@ -30,6 +30,15 @@ from secondary import take_input_horse
 #           used to store images and files (BYTES)         #
 ############################################################
 
+def show_help_db():
+    print ("\nYou can: ")
+    print ("1. Add a new database")
+    print ("2. List existing databases")
+    print ("3. Connect to an existing database")
+    print ("4. Delete a database")
+    print ("5. Quit")
+    print ("\n")
+
 def show_help_table():
     print ("\nYou can: ")
     print ("1. Add a rider's data to the database")
@@ -42,17 +51,11 @@ def show_help_table():
     print ("8. Quit")
     print ("\n")
 
-def show_help_db():
-    print ("\nYou can: ")
-    print ("1. Add a new database")
-    print ("2. List existing databases")
-    print ("3. Connect to an existing database")
-    print ("4. Delete a database")
-    print ("5. Quit")
-    print ("\n")
-
-path = "/Users/iainwalker/Programming/GitKraken/database"
+os.chdir ("databases")
+path = (os.getcwd())
 file_list = os.listdir(path)
+print ("Current working directory: ")
+print (path)
 
 while True:
     while True:
@@ -65,8 +68,6 @@ while True:
             print ("successfully created database")
             break
         elif db in ["2", "check", "check databases", "check db", "list databases", "list db"]:
-            path = "/Users/iainwalker/Programming/GitKraken/database"
-            file_list = os.listdir(path)
             print ("Databases: ")
             for file in file_list:
                 if file.endswith (".db"):
@@ -105,15 +106,18 @@ while True:
 
     print (dbname)
     show_help_table()
-    conn = sqlite3.connect(dbname + ".db") #create a connection and specify the database it should connect to
-    cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
-    print ("Sucessfully connected to database")
 
     do = input ("What would you like to do? ").lower()
     if do in ["add rider", "1"]:
         take_input_rider()
     elif do in ["add horse", "2"]:
         take_input_horse()
+    elif do in ["edit", "edit row", "edit data", "3"]:
+        print ("sorry, that feature doesn't yet exist")
+    elif do in ["delete row", "delete data", "delete", "4"]:
+        print ("sorry, that feature doesn't yet exist")
+    elif do in ["show row", "show data", "show", "5"]:
+        print ("sorry, that feature doesn't yet exist")
     elif do in ["return", "return to database list", "database list", "6"]:
         continue
     elif do in ["help", "7"]:

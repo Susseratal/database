@@ -46,7 +46,7 @@ def write_data_rider (currentdate: str, rider_firstname: str, rider_surname: str
 def write_data_horse (horse_id: int, horse_name: str, horse_weight: int, hours_worked: int) -> bool:
     try:
         sqlite_create_table_query = '''CREATE TABLE if not exists horses(
-        horse_id INT NOT NULL,
+        horse_id INTEGER PRIMARY KEY,
         horse_name TEXT NOT NULL,
         horse_weight INT NOT NULL
         hours_worked INT NOT NULL);'''
@@ -57,8 +57,8 @@ def write_data_horse (horse_id: int, horse_name: str, horse_weight: int, hours_w
         sqlite_insert_query = '''INSERT INTO horses
         (horse_id, horse_name, horse_weight, hours_worked)
         VALUES
-        (?, ?, ?, ?)'''
-        table_row = (horse_id, horse_name, horse_weight, hours_worked)
+        (?, ?, ?)'''
+        table_row = (horse_name, horse_weight, hours_worked)
         count = cursor.execute(sqlite_insert_query, table_row)
         conn.commit()
         print ("Information recorded", cursor.rowcount)
@@ -76,10 +76,12 @@ def take_input_rider():
     print ("User information: ")
     print ("#" * 20)
     currentdate = input ("please enter the date: (format dd/mm/yyyy) ")
-    currentdate = datetime.datetime.strptime(currentdate, "%d/%m/%Y").date() #This works but the error handling is atrocious. 
-    #Also it doesn't completely work
+    currentdate = datetime.datetime.strptime(currentdate, "%d/%m/%Y").date() #This works but the error handling is atrocious. (it literally just crashes)
+    #if currentdate != correct formatting:
+        #return?
+    #else:
+        #break
     currentdate = currentdate.isoformat()
-    str(currentdate)
     print (currentdate) #for testing purposes
     rider_firstname = input ("Please enter the rider's first name: ").title()
     rider_surname = input ("Please enter the rider's surname: ").title()
@@ -109,18 +111,16 @@ def take_input_horse():
     print ("")
     print ("Horse information: ")
     print ("#" * 20)
-    horse_id = int(input ("Please enter the horses ID: "))
     horse_name = input ("Please enter the horse's name: ").title()
     horse_weight = input ("Please enter the horse's wight (in KG): ")
     horse_weight = ((horse_weight) + "kg")
     hours_worked = int(input ("Please enter how many hours the horse has worked: "))
     print ("\nThe data you inputted was: ")
-    print ("\nHorse ID: " + str((horse_id)))
     print ("\nHorse name: " + str((horse_name)))
     print ("\nHorse weight: " + str((horse_weight)))
     print ("\nHours worked: " + str((hours_worked)))
     check2 = input ("Is this correct? y/n ").lower()
     if check2 in ["yes", "y"]:
-        write_data_horse(horse_id, horse_name, horse_weight, hours_worked)
+        write_data_horse(horse_name, horse_weight, hours_worked)
         pass
 
