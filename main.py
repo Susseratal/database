@@ -1,9 +1,10 @@
 import datetime
+import glob
 import os
 import os.path
-import glob
 import sqlite3
 import sys
+import time
 from datetime import date
 from sqlite3 import Error
 from secondary import take_input_rider
@@ -44,42 +45,60 @@ def show_help_table():
 def show_help_db():
     print ("\nYou can: ")
     print ("1. Add a new database")
-    print ("2. Connect to an existing database")
-    print ("3. Delete a database")
-    print ("4. Quit")
+    print ("2. List existing databases")
+    print ("3. Connect to an existing database")
+    print ("4. Delete a database")
+    print ("5. Quit")
     print ("\n")
+
+path = "/Users/iainwalker/Programming/GitKraken/database"
+file_list = os.listdir(path)
 
 while True:
     while True:
         show_help_db()
-        db = input ("what do you want to do: ")
+        db = input ("what do you want to do: ").lower()
         if db in ["create database", "1", "add database"]:
             dbname = input ("What do you want to call the database: ")
             conn = sqlite3.connect(dbname + ".db")
             cursor = conn.cursor()
             print ("successfully created database")
             break
-        elif db in ["2", "connect to database"]:
+        elif db in ["2", "check", "check databases", "check db", "list databases", "list db"]:
+            path = "/Users/iainwalker/Programming/GitKraken/database"
+            file_list = os.listdir(path)
+            print ("Databases: ")
+            for file in file_list:
+                if file.endswith (".db"):
+                    print (os.path.join(file))
+        elif db in ["3", "connect to database"]:
+            print ("Databases: ")
+            for file in file_list:
+                if file.endswith (".db"):
+                    print (os.path.join(file))
             dbname = input ("Which database do you want to connect to: ")
             conn = sqlite3.connect(dbname + ".db")
             cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
+            print ("connecting...")
+            time.sleep (0.5)
             print ("Successfully connected to database")
             break
-        elif db in ["3", "delete", "delete database"]:
-            path = "/Users/iainwalker/Programming/GitKraken/database"
-            file_list = os.listdir(path)
+        elif db in ["4", "delete", "delete database"]:
+            print ("Databases: ")
             for file in file_list:
                 if file.endswith (".db"):
-                    print ("Databases: ")
                     print (os.path.join(file))
                     base = input ("which database would you like to delete: ")
                     if base in ["cancel", "c", "escape"]:
+                        print ("cancelling deletion")
                         break
                     else:
+                        print ("deleting...")
+                        time.sleep(0.5)
                         os.remove (base + ".db")
-                else:
-                    print ("There are currently no existing databases")
-        elif db in ["4", "quit", "exit"]:
+                        print ("Successfully deleted " + base + ".db")
+                        break
+        elif db in ["5", "quit", "exit"]:
             sys.exit()
         else: 
             print ("Invalid command")

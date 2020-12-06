@@ -65,21 +65,30 @@ Changelog:
 
         - [x] Fixed everything that was very broken so it works again :)
 
-        - [x] Add custom input fields etc...
+        - [x] Create function to generate a database with a custom name
+
+        - [x] Trying to create custom databases (conn not defined in secondary)
 
         - [x] Added ability to break out of main loop to go back to database selection
 
-        - [x] Can now delete entire databases from within program
+        - [x] Fix "no databases" bug
+
+        - [x] Can jump in and out of databases
+
+        - [x] Check list of databases
+
+        - [x] Can delete databases but no error handling so if db doesn't exist, it crashes
+
+        - [x] Added a couple of UX improvements to make workflow more pleasant
 
 To Do:
-
-        - [ ] Fix "no databases" bug
+        - [ ] Error handling for deleting databases
 
         - [ ] Need to be able to add rows of data without crash (conn is not defined)
 
-        - [ ] Trying to create custom databases (conn not defined in secondary)
+        - [ ] Organise file structure so databases are in "databases" folder
 
-        - [ ] Create function to generate a database with a custom name
+        - [ ] Add custom input fields (and custom number of fields) in tables
 
         - [ ] Add ability to edit and delete rows of data
 
