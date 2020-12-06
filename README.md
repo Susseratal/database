@@ -65,7 +65,11 @@ Changelog:
 
         - [x] Fixed everything that was very broken so it works again :)
 
+        - [x] Added ability to break out of main loop to go back to database selection
+
 To Do:
+
+        - [ ] Need to be able to add rows of data without crash (conn is not defined)
 
         - [ ] Trying to create custom databases (conn not defined in secondary)
 
