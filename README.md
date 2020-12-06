@@ -65,6 +65,8 @@ Changelog:
 
         - [x] Fixed everything that was very broken so it works again :)
 
+        - [x] Add custom input fields etc...
+
         - [x] Added ability to break out of main loop to go back to database selection
 
         - [x] Can now delete entire databases from within program
@@ -78,8 +80,6 @@ To Do:
         - [ ] Trying to create custom databases (conn not defined in secondary)
 
         - [ ] Create function to generate a database with a custom name
-
-        - [ ] Add custom input fields etc...
 
         - [ ] Add ability to edit and delete rows of data
 
