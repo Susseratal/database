@@ -31,93 +31,93 @@ from secondary import take_input_horse
 ############################################################
 
 def show_help_db():
-    print ("\nYou can: ")
-    print ("1. Add a new database")
-    print ("2. List existing databases")
-    print ("3. Connect to an existing database")
-    print ("4. Delete a database")
-    print ("5. Quit")
-    print ("\n")
+    print("\nYou can: ")
+    print("1. Add a new database")
+    print("2. List existing databases")
+    print("3. Connect to an existing database")
+    print("4. Delete a database")
+    print("5. Quit")
+    print("\n")
 
 def show_help_table():
-    print ("\nYou can: ")
-    print ("1. Add a rider's data to the database")
-    print ("2. Add a horses' data to the database")
-    print ("3. Edit data in the database")
-    print ("4. Delete a row of data")
-    print ("5. Show data in the database")
-    print ("6. Return to the database selection")
-    print ("7. Show this help message")
-    print ("8. Quit")
-    print ("\n")
+    print("\nYou can: ")
+    print("1. Add a rider's data to the database")
+    print("2. Add a horses' data to the database")
+    print("3. Edit data in the database")
+    print("4. Delete a row of data")
+    print("5. Show data in the database")
+    print("6. Return to the database selection")
+    print("7. Show this help message")
+    print("8. Quit")
+    print("\n")
 
 os.chdir ("databases")
 path = (os.getcwd())
 file_list = os.listdir(path)
-print ("Current working directory: ")
-print (path)
+print("Current working directory: ")
+print(path)
 
 while True:
     while True:
         show_help_db()
-        db = input ("what do you want to do: ").lower()
+        db = input("what do you want to do: ").lower()
         if db in ["create database", "1", "add database"]:
-            dbname = input ("What do you want to call the database: ")
+            dbname = input("What do you want to call the database: ")
             conn = sqlite3.connect(dbname + ".db")
             cursor = conn.cursor()
-            print ("successfully created database")
+            print("successfully created database")
             break
         elif db in ["2", "check", "check databases", "check db", "list databases", "list db"]:
-            print ("Databases: ")
+            print("Databases: ")
             for file in file_list:
                 if file.endswith (".db"):
-                    print (os.path.join(file))
+                    print(os.path.join(file))
         elif db in ["3", "connect to database"]:
-            print ("Databases: ")
+            print("Databases: ")
             for file in file_list:
                 if file.endswith (".db"):
-                    print (os.path.join(file))
-            dbname = input ("Which database do you want to connect to: ")
+                    print(os.path.join(file))
+            dbname = input("Which database do you want to connect to: ")
             conn = sqlite3.connect(dbname + ".db")
             cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
-            print ("connecting...")
+            print("connecting...")
             time.sleep (0.5)
-            print ("Successfully connected to database")
+            print("Successfully connected to database")
             break
         elif db in ["4", "delete", "delete database"]:
-            print ("Databases: ")
+            print("Databases: ")
             for file in file_list:
                 if file.endswith (".db"):
-                    print (os.path.join(file))
-                    base = input ("which database would you like to delete: ")
+                    print(os.path.join(file))
+                    base = input("which database would you like to delete: ")
                     if base in ["cancel", "c", "escape"]:
-                        print ("cancelling deletion")
+                        print("cancelling deletion")
                         break
                     else:
-                        print ("deleting...")
+                        print("deleting...")
                         time.sleep(0.5)
                         os.remove (base + ".db")
-                        print ("Successfully deleted " + base + ".db")
+                        print("Successfully deleted " + base + ".db")
                         break
         elif db in ["5", "quit", "exit"]:
             sys.exit()
         else: 
-            print ("Invalid command")
+            print("Invalid command")
 
-    print (dbname)
+    print(dbname)
     show_help_table()
 
-    do = input ("What would you like to do? ").lower()
+    do = input("What would you like to do? ").lower()
     if do in ["add rider", "1"]:
         take_input_rider()
     elif do in ["add horse", "2"]:
         take_input_horse()
     elif do in ["edit", "edit row", "edit data", "3"]:
-        print ("sorry, that feature doesn't yet exist")
+        print("sorry, that feature doesn't yet exist")
     elif do in ["delete row", "delete data", "delete", "4"]:
-        print ("sorry, that feature doesn't yet exist")
+        print("sorry, that feature doesn't yet exist")
     elif do in ["show row", "show data", "show", "5"]:
-        print ("sorry, that feature doesn't yet exist")
+        print("sorry, that feature doesn't yet exist")
     elif do in ["return", "return to database list", "database list", "6"]:
         continue
     elif do in ["help", "7"]:
@@ -125,4 +125,4 @@ while True:
     elif do in ["quit", "8"]:
         sys.exit()
     else:
-        print ("Invalid command")
+        print("Invalid command")

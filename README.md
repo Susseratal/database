@@ -45,6 +45,7 @@ Changelog:
         - [x] Can delete databases but no error handling so if db doesn't exist, it crashes
         - [x] Added a couple of UX improvements to make workflow more pleasant
         - [x] Organise file structure so databases are in "databases" folder
+        - [x] NO SPACES
 
 To Do:
 
