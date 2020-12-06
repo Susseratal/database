@@ -1,6 +1,7 @@
 import datetime
 import os
 import os.path
+import glob
 import sqlite3
 import sys
 from datetime import date
@@ -67,13 +68,17 @@ while True:
         elif db in ["3", "delete", "delete database"]:
             path = "/Users/iainwalker/Programming/GitKraken/database"
             file_list = os.listdir(path)
-            if ".db" in file_list(str):
-                print ("Databases: ")
-                print (file_list)
-                base = input ("which database would you like to delete: ")
-                os.remove (base + ".db")
-            else:
-                print ("There are currently no existing databases")
+            for file in file_list:
+                if file.endswith (".db"):
+                    print ("Databases: ")
+                    print (os.path.join(file))
+                    base = input ("which database would you like to delete: ")
+                    if base in ["cancel", "c", "escape"]:
+                        break
+                    else:
+                        os.remove (base + ".db")
+                else:
+                    print ("There are currently no existing databases")
         elif db in ["4", "quit", "exit"]:
             sys.exit()
         else: 

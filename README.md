@@ -67,7 +67,11 @@ Changelog:
 
         - [x] Added ability to break out of main loop to go back to database selection
 
+        - [x] Can now delete entire databases from within program
+
 To Do:
+
+        - [ ] Fix "no databases" bug
 
         - [ ] Need to be able to add rows of data without crash (conn is not defined)
 
