@@ -1,12 +1,12 @@
 
 Database README
 
-<!-- language: lang-none -->{
+<!-- language: lang-none -->
              _       _        _                    
           __| | __ _| |_ __ _| |__   __ _ ___  ___ 
          / _` |/ _` | __/ _` | '_ \ / _` / __|/ _ \
         | (_| | (_| | || (_| | |_) | (_| \__ \  __/
-         \__,_|\__,_|\__\__,_|_.__/ \__,_|___/\_ _|}
+         \__,_|\__,_|\__\__,_|_.__/ \__,_|___/\_ _|
 
 This is an open source database. This is sort of a demonstration to prove that you don't need an overcomplicated interface for something like this.
 
