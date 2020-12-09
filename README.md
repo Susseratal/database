@@ -1,6 +1,15 @@
 
 Database README
 
+##############################################
+#     _       _        _                     #
+#  __| | __ _| |_ __ _| |__   __ _ ___  ___  #
+# / _` |/ _` | __/ _` | '_ \ / _` / __|/ _ \ #
+#| (_| | (_| | || (_| | |_) | (_| \__ \  __/ #
+# \__,_|\__,_|\__\__,_|_.__/ \__,_|___/\___| #
+#                                            #
+##############################################
+
 This is an open source database. This is sort of a demonstration to prove that you don't need an overcomplicated interface for something like this.
 
 I appreciate that most databases are now on web portals or something similar, but  
