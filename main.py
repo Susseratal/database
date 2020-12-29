@@ -61,27 +61,34 @@ def main():
     file_list = os.listdir(path)
     print("\nCurrent working directory: ")
     print(path)
+
     while True:
-        while True:
+        db_connected = False
+        while not db_connected:
             show_help_db()
             db = input("what do you want to do: ").lower()
+
             if db in ["create database", "1", "add database"]:
                 dbname = input("What do you want to call the database: ")
-                conn = sqlite3.connect(dbname + ".db")
-                cursor = conn.cursor()
+                conn = sqlite3.connect(dbname + ".db") #connect to selected database
+                cursor = conn.cursor() #create a cursor object
                 print("successfully created database")
-                break
+                db_connected = True
+
             elif db in ["2", "check", "check databases", "check db", "list databases", "list db"]:
                 print("Databases: ")
-                for file in file_list:
-                    if file.endswith (".db"):
-                        print(os.path.join(file))
+                for file in file_list: 
+                    path = pathlib.Path(file)
+                    if path.suffix == ".db":
+                        print(path.stem) #check the file list for the suffix .db and then prints it without the .db
+
             elif db in ["3", "connect to database"]:
                 print("Databases: ")
                 for file in file_list:
-                    if file.endswith (".db"):
-                        print(os.path.join(file))
-                dbname = input("Which database do you want to connect to: ")
+                    path = pathlib.Path(file)
+                    if path.suffix == ".db":
+                        print(path.stem)
+                dbname = input("\nWhich database do you want to connect to: ")
                 dbname = (dbname + ".db")
                 if dbname not in file_list:
                     print ("No such database exists ")
@@ -91,23 +98,26 @@ def main():
                     print("connecting...")
                     time.sleep (0.5)
                     print("Successfully connected to database")
-                    break
+                    db_connected = True
+
             elif db in ["4", "delete", "delete database"]:
                 print("Databases: ")
                 for file in file_list:
-                    if file.endswith (".db"):
-                        print(os.path.join(file))
-                        print("If you would like to cancel your deletion, just type any of 'c, escape, cancel' and hit return")
-                        base = input("which database would you like to delete: ")
-                        if base in ["cancel", "c", "escape"]:
-                            print("cancelling deletion")
-                            break
-                        else:
-                            print("deleting...")
-                            time.sleep(0.5)
-                            os.remove (base + ".db")
-                            print("Successfully deleted " + base + ".db")
-                            break
+                    path = pathlib.Path(file)
+                    if path.suffix == ".db":
+                        print(path.stem)
+                print("\nIf you would like to cancel your deletion, just hit return")
+                base = input("which database would you like to delete: ")
+                if base in [""]:
+                    print("cancelling deletion")
+                elif dbname not in file_list:
+                    print ("No such database exists ")
+                else:
+                    print("deleting...")
+                    time.sleep(0.5)
+                    os.remove (base + ".db")
+                    print("Successfully deleted " + base + ".db")
+
             elif db in ["5", "quit", "exit", "q"]:
                 sys.exit()
             else: 
@@ -128,7 +138,7 @@ def main():
         elif do in ["show row", "show data", "show", "5"]:
             print("sorry, that feature doesn't yet exist")
         elif do in ["return", "return to database list", "database list", "6"]:
-            continue
+            db_connected = False
         elif do in ["help", "7"]:
             show_help_table()
         elif do in ["quit", "8"]:

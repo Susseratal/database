@@ -55,6 +55,7 @@ Changelog:
         - [x] NO SPACES
         - [x] sys.argv so it doesn't matter where script runs from the path doesn't break (used pathlib)
         - [x] Cope with missing databases directory
+        - [x] When connecting to and deleting databases show db names without.db
 
 To Do:
 
@@ -65,5 +66,6 @@ To Do:
         - [ ] Add custom input fields (and custom number of fields) in tables
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
         - [ ] Calculate if a rider and horse are compatable
+        - [ ] Deleting databases using integers (like notes in frank)
         - [ ] datatime formatting still has really poor error handling
         - [ ] Use curses for the interface perhaps?
