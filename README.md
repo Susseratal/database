@@ -63,10 +63,10 @@ Changelog:
 
 To Do:
 
+        - [ ] Access rows of data in a readable format
         - [ ] Add ability to edit and delete rows of data
-        - [ ] Add custom input fields (and custom number of fields) in tables
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
         - [ ] Calculate if a rider and horse are compatable
         - [ ] Deleting databases using integers (like notes in frank)
-        - [ ] datatime formatting still has really poor error handling
+        - [ ] datatime formatting has no error handling/exceptions
         - [ ] Use curses for the interface perhaps?

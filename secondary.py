@@ -118,7 +118,7 @@ def take_input_horse(conn):
     print("Horse information: ")
     print("#" * 20)
     horse_name = input("Please enter the horse's name: ").title()
-    horse_weight = input("Please enter the horse's wight (in KG): ")
+    horse_weight = input("Please enter the horse's weight (in KG): ")
     horse_weight = ((horse_weight) + "kg")
     hours_worked = int(input("Please enter how many hours the horse has worked: "))
     print("\nThe data you inputted was: ")
