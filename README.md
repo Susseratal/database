@@ -56,11 +56,11 @@ Changelog:
 
 To Do:
 
-        - [ ] sys.argv so it doesn't matter where script runs from the path doesn't break        
         - [ ] Error handling for deleting databases (last time it just printed the error message a few times in the "no databases" bug)
+        - [ ] sys.argv so it doesn't matter where script runs from the path doesn't break        
         - [ ] Need to be able to add rows of data without crash (conn is not defined) ## I am avoiding this problem ##
-        - [ ] Add custom input fields (and custom number of fields) in tables
         - [ ] Add ability to edit and delete rows of data
+        - [ ] Add custom input fields (and custom number of fields) in tables
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
         - [ ] Calculate if a rider and horse are compatable
         - [ ] datatime formatting still has really poor error handling

@@ -54,8 +54,9 @@ def show_help_table():
 os.chdir ("databases")
 path = (os.getcwd())
 file_list = os.listdir(path)
-print("Current working directory: ")
-print(path)
+os.path.join (path, "")
+print("\nCurrent working directory: ")
+print(path + "/" + sys.argv[0])
 
 while True:
     while True:
@@ -78,17 +79,22 @@ while True:
                 if file.endswith (".db"):
                     print(os.path.join(file))
             dbname = input("Which database do you want to connect to: ")
-            conn = sqlite3.connect(dbname + ".db")
-            cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
-            print("connecting...")
-            time.sleep (0.5)
-            print("Successfully connected to database")
-            break
+            dbname = (dbname + ".db")
+            if dbname not in file_list:
+                print ("No such database exists ")
+            else:
+                conn = sqlite3.connect(dbname + ".db")
+                cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
+                print("connecting...")
+                time.sleep (0.5)
+                print("Successfully connected to database")
+                break
         elif db in ["4", "delete", "delete database"]:
             print("Databases: ")
             for file in file_list:
                 if file.endswith (".db"):
                     print(os.path.join(file))
+                    print("If you would like to cancel your deletion, just type any of 'c, escape, cancel' and hit return")
                     base = input("which database would you like to delete: ")
                     if base in ["cancel", "c", "escape"]:
                         print("cancelling deletion")
@@ -99,7 +105,7 @@ while True:
                         os.remove (base + ".db")
                         print("Successfully deleted " + base + ".db")
                         break
-        elif db in ["5", "quit", "exit"]:
+        elif db in ["5", "quit", "exit", "q"]:
             sys.exit()
         else: 
             print("Invalid command")
