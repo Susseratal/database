@@ -71,7 +71,6 @@ def main():
             if db in ["create database", "1", "add database"]:
                 dbname = input("What do you want to call the database: ")
                 conn = sqlite3.connect(dbname + ".db") #connect to selected database
-                cursor = conn.cursor() #create a cursor object
                 print("successfully created database")
                 db_connected = True
 
@@ -94,7 +93,6 @@ def main():
                     print ("No such database exists ")
                 else:
                     conn = sqlite3.connect(dbname)
-                    cursor = conn.cursor() #create a cursor object using the connection object returned by the connect method
                     print("connecting...")
                     time.sleep (0.5)
                     print("Successfully connected to database")
@@ -108,6 +106,7 @@ def main():
                         print(path.stem)
                 print("\nIf you would like to cancel your deletion, just hit return")
                 base = input("which database would you like to delete: ")
+                dbname = (base + ".db")
                 if base in [""]:
                     print("cancelling deletion")
                 elif dbname not in file_list:
@@ -128,9 +127,9 @@ def main():
 
         do = input("What would you like to do? ").lower()
         if do in ["add rider", "1"]:
-            take_input_rider()
+            take_input_rider(conn)
         elif do in ["add horse", "2"]:
-            take_input_horse()
+            take_input_horse(conn)
         elif do in ["edit", "edit row", "edit data", "3"]:
             print("sorry, that feature doesn't yet exist")
         elif do in ["delete row", "delete data", "delete", "4"]:

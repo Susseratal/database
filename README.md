@@ -58,10 +58,11 @@ Changelog:
         - [x] When connecting to and deleting databases show db names without.db
         - [x] Error handling for deleting databases (last time it just printed the error message a few times in the "no databases" bug)
         - [x] (no longer) Need to quit out and reload program in order to register a newly created database. (bad workflow must fix)
+        - [x] Need to be able to add rows of data without crash (conn is not defined) ## I am avoiding this problem ## my enemy is defeated
+        - [x] deleting databases is broken again
 
 To Do:
 
-        - [ ] Need to be able to add rows of data without crash (conn is not defined) ## I am avoiding this problem ##
         - [ ] Add ability to edit and delete rows of data
         - [ ] Add custom input fields (and custom number of fields) in tables
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
