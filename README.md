@@ -53,11 +53,12 @@ Changelog:
         - [x] Added a couple of UX improvements to make workflow more pleasant
         - [x] Organise file structure so databases are in "databases" folder
         - [x] NO SPACES
+        - [x] sys.argv so it doesn't matter where script runs from the path doesn't break (used pathlib)
 
 To Do:
 
         - [ ] Error handling for deleting databases (last time it just printed the error message a few times in the "no databases" bug)
-        - [ ] sys.argv so it doesn't matter where script runs from the path doesn't break        
+        - [ ] Need to quit out and reload program in order to register a newly created database. (bad workflow must fix)
         - [ ] Need to be able to add rows of data without crash (conn is not defined) ## I am avoiding this problem ##
         - [ ] Add ability to edit and delete rows of data
         - [ ] Add custom input fields (and custom number of fields) in tables
