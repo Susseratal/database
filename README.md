@@ -54,6 +54,7 @@ Changelog:
         - [x] Organise file structure so databases are in "databases" folder
         - [x] NO SPACES
         - [x] sys.argv so it doesn't matter where script runs from the path doesn't break (used pathlib)
+        - [x] Cope with missing databases directory
 
 To Do:
 

@@ -55,6 +55,8 @@ def show_help_table():
 def main():
     path = pathlib.Path(sys.argv[0]).resolve()
     path = path.parent / "databases"
+    if not path.exists():
+        path.mkdir()
     os.chdir(path)
     file_list = os.listdir(path)
     print("\nCurrent working directory: ")
