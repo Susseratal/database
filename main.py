@@ -53,18 +53,18 @@ def show_help_table():
     print("\n")
 
 def main():
-    path = pathlib.Path(sys.argv[0]).resolve()
-    path = path.parent / "databases"
-    if not path.exists():
-        path.mkdir()
-    os.chdir(path)
-    file_list = os.listdir(path)
+    db_path = pathlib.Path(sys.argv[0]).resolve()
+    db_path = db_path.parent / "databases"
+    if not db_path.exists():
+        db_path.mkdir()
+    os.chdir(db_path)
     print("\nCurrent working directory: ")
-    print(path)
+    print(db_path)
 
     while True:
         db_connected = False
         while not db_connected:
+            file_list = os.listdir(db_path)
             show_help_db()
             db = input("what do you want to do: ").lower()
 
