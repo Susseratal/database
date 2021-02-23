@@ -63,10 +63,12 @@ Changelog:
 
 To Do:
 
-        - [ ] Access rows of data in a readable format
+        - [ ] Print rows of data in the program so you don't have to open DBBrowser each time
         - [ ] Add ability to edit and delete rows of data
+        - [ ] Deleting databases using integers (like notes in frank)
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
         - [ ] Calculate if a rider and horse are compatable
-        - [ ] Deleting databases using integers (like notes in frank)
-        - [ ] datatime formatting has no error handling/exceptions
+        - [ ] datetime formatting has no error handling/exceptions
+        - [ ] Rework menu system to avoid repetition (function to show menu and prompt for input)
+        - [ ] Just do it all again from scratch
         - [ ] Use curses for the interface perhaps?
