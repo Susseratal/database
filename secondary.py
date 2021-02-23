@@ -130,3 +130,20 @@ def take_input_horse(conn):
         write_data_horse(conn, horse_name, horse_weight, hours_worked)
         pass
 
+def show_rider_data(conn):
+    sqlite_select_booking_query = '''SELECT * FROM booking'''
+    cursor = conn.cursor()
+    for row in cursor.execute(sqlite_select_booking_query):
+        print(row)
+
+def show_horse_data(conn):
+    sqlite_select_horses_query = '''SELECT * FROM horses'''
+    cursor = conn.cursor()
+    for row in cursor.execute(sqlite_select_horses_query):
+        print(row)
+
+def edit_rider_data(conn):
+    pass
+
+def edit_horse_data(conn):
+    pass

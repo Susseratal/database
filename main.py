@@ -8,8 +8,7 @@ import sys
 import time
 from datetime import date
 from sqlite3 import Error
-from secondary import take_input_rider
-from secondary import take_input_horse
+from secondary import take_input_rider, take_input_horse, show_rider_data, show_horse_data
 
 ##############################################
 #     _       _        _                     #
@@ -44,12 +43,15 @@ def show_help_table():
     print("\nYou can: ")
     print("1. Add a rider's data to the database")
     print("2. Add a horses' data to the database")
-    print("3. Edit data in the database")
-    print("4. Delete a row of data")
-    print("5. Show data in the database")
-    print("6. Return to the database selection")
-    print("7. Show this help message")
-    print("8. Quit")
+    print("3. Show rider data")
+    print("4. Show horse data")
+    print("5. Edit a rider's data")
+    print("6. Edit a horse's data")
+    print("7. Delete a row of data")
+    print("8. Show data in the database")
+    print("9. Return to the database selection")
+    print("10. Show this help message")
+    print("11. Quit")
     print("\n")
 
 def main():
@@ -130,17 +132,23 @@ def main():
             take_input_rider(conn)
         elif do in ["add horse", "2"]:
             take_input_horse(conn)
-        elif do in ["edit", "edit row", "edit data", "3"]:
+        elif do in ["show rider data", "show rider", "3"]:
+            show_rider_data(conn)
+        elif do in ["show horse data", "show horse", "4"]:
+            show_horse_data(conn)
+        elif do in ["edit rider", "5"]:
+            pass
+        elif do in ["edit horse", "6"]:
+            pass
+        elif do in ["delete row", "delete data", "delete", "7"]:
             print("sorry, that feature doesn't yet exist")
-        elif do in ["delete row", "delete data", "delete", "4"]:
+        elif do in ["show row", "show data", "show", "8"]:
             print("sorry, that feature doesn't yet exist")
-        elif do in ["show row", "show data", "show", "5"]:
-            print("sorry, that feature doesn't yet exist")
-        elif do in ["return", "return to database list", "database list", "6"]:
+        elif do in ["return", "return to database list", "database list", "9"]:
             db_connected = False
-        elif do in ["help", "7"]:
+        elif do in ["help", "10"]:
             show_help_table()
-        elif do in ["quit", "8"]:
+        elif do in ["quit", "11"]:
             sys.exit()
         else:
             print("Invalid command")
