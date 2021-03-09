@@ -59,11 +59,13 @@ Changelog:
         - [x] Error handling for deleting databases (last time it just printed the error message a few times in the "no databases" bug)
         - [x] (no longer) Need to quit out and reload program in order to register a newly created database. (bad workflow must fix)
         - [x] Need to be able to add rows of data without crash (conn is not defined) ## I am avoiding this problem ## my enemy is defeated
-        - [x] deleting databases is broken again
+        - [x] deleting databases is broken again (I fixed it)
+        - [x] Print rows of data in the program so you don't have to open DBBrowser each time
 
 To Do:
 
-        - [ ] Print rows of data in the program so you don't have to open DBBrowser each time
+        - [ ] After doing anything it kicks you back to database selection, should fix
+        - [ ] Correct formatting on printing data
         - [ ] Add ability to edit and delete rows of data
         - [ ] Deleting databases using integers (like notes in frank)
         - [ ] generate "Horses" table with primary key, foreign key and auto increment
