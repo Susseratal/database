@@ -56,7 +56,7 @@ def show_help_table():
 
 def main():
     db_path = pathlib.Path(sys.argv[0]).resolve()
-    db_path = db_path.parent / "databases"
+    db_path = db_path.parent / ".." / "databases"
     if not db_path.exists():
         db_path.mkdir()
     os.chdir(db_path)
